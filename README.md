@@ -4,6 +4,8 @@ When you want to make a dataset for deep learning, it may help you
 
 ## 1 Cat Face Detection
 
+- Prerequisite: `opencv-python` and [`opencv files`](https://github.com/zhaoyuzhi/opencv/tree/master/data/haarcascades): [haarcascade_frontalcatface.xml](https://github.com/zhaoyuzhi/opencv/blob/master/data/haarcascades/haarcascade_frontalcatface_extended.xml), [haarcascade_frontalcatface.xml](https://github.com/zhaoyuzhi/opencv/blob/master/data/haarcascades/haarcascade_frontalcatface_extended.xml);
+
 - Usage (catface_detection.py): All in one, the image based detection algorithm and folder based detection algorithm;
 
 - Results: It is based on opencv cat detection. There are two choices of the given APIs: bigger and smaller rectangles. The results are not very perfect;
@@ -14,6 +16,8 @@ When you want to make a dataset for deep learning, it may help you
 ![cat1result](https://github.com/zhaoyuzhi/DL-Dataset-Useful-Script/blob/master/catface_detection/cat1_result.jpg)
 
 ## 2 Face Detection by Dlib
+
+- Prerequisite: `Dlib` and [`Dilb files`](http://dlib.net/files/): shape_predictor_5_face_landmarks.dat, shape_predictor_68_face_landmarks.dat;
 
 - Usage (detection.py): Detect all the faces in a given image;
 
@@ -36,6 +40,8 @@ The aligned sub-faces are (there is border effect in the sub-faces):
 ![dlibsub3](https://github.com/zhaoyuzhi/DL-Dataset-Useful-Script/blob/master/face_detection_dlib/results/det_2.jpg)
 
 ## 3 Face Detection by face_recognition
+
+- Prerequisite: `face_recognition`;
 
 - Usage (illustration.py): Illustrate the aligned faces in a given image;
 
