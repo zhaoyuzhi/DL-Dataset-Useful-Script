@@ -86,3 +86,16 @@ The fourth output group:
 ![face_recognition3_1](https://github.com/zhaoyuzhi/DL-Dataset-Useful-Script/blob/master/face_detection_face_recognition/results/3_1.jpg)
 ![face_recognition3_2](https://github.com/zhaoyuzhi/DL-Dataset-Useful-Script/blob/master/face_detection_face_recognition/results/3_2.jpg)
 ![face_recognition3_3](https://github.com/zhaoyuzhi/DL-Dataset-Useful-Script/blob/master/face_detection_face_recognition/results/3_3.jpg)
+
+## 4 Edge Detection
+
+We provide 3 kinds of edge detection algorithms by OpenCV lib.
+
+For the result of Lab color space (order: L -> a -> b):
+
+![l](https://github.com/zhaoyuzhi/DL-Dataset-Useful-Script/blob/master/edge_detection/l.jpg)
+![a](https://github.com/zhaoyuzhi/DL-Dataset-Useful-Script/blob/master/edge_detection/a.jpg)
+![b](https://github.com/zhaoyuzhi/DL-Dataset-Useful-Script/blob/master/edge_detection/b.jpg)
+![lresult](https://github.com/zhaoyuzhi/DL-Dataset-Useful-Script/blob/master/edge_detection/lresult.jpg)
+![aresult](https://github.com/zhaoyuzhi/DL-Dataset-Useful-Script/blob/master/edge_detection/aresult.jpg)
+![bresult](https://github.com/zhaoyuzhi/DL-Dataset-Useful-Script/blob/master/edge_detection/bresult.jpg)
