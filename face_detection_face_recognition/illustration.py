@@ -156,6 +156,7 @@ def visualize_landmark(image_array, landmarks):
     plt.imshow(origin_img)
 
 if __name__=='__main__':
+    
     # load image
     img_name = 'C:\\Users\\ZHAO Yuzhi\\Desktop\\code\\face\\target_family\\taiwan family\\1.jpg'
     image_array = cv2.imread(img_name)
@@ -165,3 +166,4 @@ if __name__=='__main__':
     
     visualize_landmark(image_array = face, landmarks = landmarks)
     plt.show()
+    
