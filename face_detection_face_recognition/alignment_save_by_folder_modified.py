@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import face_recognition
 from collections import defaultdict
 import numpy as np
+import os
 
 def detect_landmark(image_array, model_type = "large"):
     """ return landmarks of a given image array
