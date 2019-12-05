@@ -83,9 +83,9 @@ def save_by_folder(imglist):
 def get_files(path):
     # read a folder, return the complete path
     ret = []
-    for root, dirs, files in os.walk(path):  
+    for root, dirs, files in os.walk(path):
         for filespath in files: 
-            ret.append(os.path.join(root,filespath)) 
+            ret.append(os.path.join(root, filespath)) 
     return ret
 
 if __name__ == "__main__":
