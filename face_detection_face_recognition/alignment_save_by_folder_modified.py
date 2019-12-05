@@ -162,22 +162,31 @@ def face_preprocess(image, landmark_model_type = 'large', addsize = 0):
         cropped_face.append(sub_cropped_face)
         transferred_landmarks.append(sub_transferred_landmarks)
     return cropped_face, transferred_landmarks
-    
-def save_image(imgpath, addsize = 0):
+
+def save_image(imglist, addsize = 0):
     """ save images
     :param image_array: numpy array of a single image
     :return: the saved image file
     """
-    image_array = cv2.imread(imgpath)
-    # preprocess the face image
-    face, landmarks = face_preprocess(image = image_array, landmark_model_type = 'large', addsize = addsize)
-    for i, face_item in enumerate(face):
-        for j, sub_face_item in enumerate(face_item):
-            cv2.imwrite('./results/' + str(i) + '_' + str(j) + ".jpg", sub_face_item)
+    for index, imgpath in enumerate(imglist):
+        image_array = cv2.imread(imgpath)
+        # preprocess the face image
+        face, landmarks = face_preprocess(image = image_array, landmark_model_type = 'large', addsize = addsize)
+        for i, face_item in enumerate(face):
+            for j, sub_face_item in enumerate(face_item):
+                cv2.imwrite('./results/' + str(i) + '_' + str(j) + ".jpg", sub_face_item)
+
+def get_files(path):
+    # read a folder, return the complete path
+    ret = []
+    for root, dirs, files in os.walk(path):
+        for filespath in files: 
+            ret.append(os.path.join(root,filespath)) 
+    return ret
 
 if __name__=='__main__':
 
     # load image
-    imgpath = 'C:\\Users\\yzzha\\Desktop\\child\\processed\\Asia\\Korean family\\11.jpg'
-    save_image(imgpath, 0)
-    
+    imgpath = 'C:\\Users\\ZHAO Yuzhi\\Desktop\\code\\face\\target_family\\taiwan family'
+    imglist = get_files(imgpath)
+    save_image(imglist, 0)
