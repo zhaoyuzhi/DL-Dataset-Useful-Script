@@ -152,7 +152,7 @@ def face_preprocess(image, landmark_model_type = 'large', addsize = 0):
         rotated_landmarks = detect_landmark(image_array = aligned_face, model_type = landmark_model_type)
         sub_cropped_face = []
         sub_transferred_landmarks = []
-        for i, face_landmarks_item in enumerate(face_landmarks_dict):
+        for i, face_landmarks_item in enumerate(rotated_landmarks):
             # crop face according to landmarks
             cropped_face_item, left, top = corp_face(image_array = aligned_face, landmarks = rotated_landmarks[i], addsize = addsize)
             # transfer landmarks to fit the cropped face
