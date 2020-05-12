@@ -27,7 +27,9 @@ When you want to make a dataset for deep learning, it may help you
 
 - Usage (alignment_save_by_image.py): Save all the aligned faces in a given image;
 
-- Usage (alignment_save_by_image.py): Save all the aligned faces in a given folder, and name them according to the input file names;
+- Usage (alignment_save_by_folder.py): Save all the aligned faces in a given folder, and name them according to the input file names;
+
+- Usage (alignment_resize_save_by_folder.py): Save all the aligned faces in a given folder, then resize them, and name them according to the input file names;
 
 - Results: It is based on dlib detection. The aligned faces will be influenced by border effect. Save to 'results' folder.
 
