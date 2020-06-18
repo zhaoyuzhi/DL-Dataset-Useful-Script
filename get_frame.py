@@ -1,18 +1,10 @@
-
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Nov  3 13:36:57 2018
-
-@author: yzzhao2
-"""
-
 import argparse
 import cv2
+import os
 
-def get_frames(basepath, videoname, savepath, interval):
+def get_frames(videoname, savepath, interval):
     # Basical definition
-    path = basepath + videoname
-    video = cv2.VideoCapture(path)
+    video = cv2.VideoCapture(videoname)
     count = 0
 
     # Whether the video file is open
@@ -25,7 +17,7 @@ def get_frames(basepath, videoname, savepath, interval):
     while rval:
         rval, frame = video.read()
         if (count % interval) == 0:
-            cv2.imwrite(savepath + str(count) + '.jpg', frame)
+            cv2.imwrite(os.path.join(savepath, str(count) + '.png'), frame)
         count = count + 1
         cv2.waitKey(1)
     video.release()
@@ -34,10 +26,10 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     # pre-train, saving, and loading parameters
-    parser.add_argument('--basepath', type = str, default = './', help = 'pre-train ot not')
     parser.add_argument('--videoname', type = str, default = 'SpiritedAway.mkv', help = 'saving mode, and by_epoch saving is recommended')
-    parser.add_argument('--savepath', type = str, default = 'C:\\Users\\ZHAO Yuzhi\\Desktop\\dataset\\Manga\\SpiritedAway\\', help = 'interval between model checkpoints (by epochs)')
+    parser.add_argument('--savepath', type = str, default = 'C:\\Users\\ZHAO Yuzhi\\Desktop\\dataset\\Manga\\SpiritedAway', help = 'interval between model checkpoints (by epochs)')
     parser.add_argument('--interval', type = int, default = 1, help = 'interval between each frame')
     opt = parser.parse_args()
 
-    get_frames(opt.basepath, opt.videoname, opt.savepath, opt.interval)
+    get_frames(opt.videoname, opt.savepath, opt.interval)
+    
